@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --primary-blue: #0f4c81;
-  --primary-light: #2563eb;
-  --bg-light: #f4f6f9;
-  --card-white: #ffffff;
-  --text-dark: #1e293b;
-  --text-muted: #64748b;
-  --border-color: #e2e8f0;
-  --font-family: 'Prompt', sans-serif;
+  /* โทนสีตาม Guidelines: น้ำเงิน-ขาว-เทาอ่อน */
+  --primary: #0a3a6b;         /* น้ำเงินเข้ม สื่อถึงความน่าเชื่อถือ */
+  --primary-hover: #072a4e;
+  --secondary: #1d6fa5;       /* น้ำเงินกลาง */
+  --bg-main: #f1f5f9;         /* เทาอ่อน สบายตา ลดความล้า */
+  --bg-card: #ffffff;         /* ขาว */
+  --text-main: #1e293b;       /* ตัวอักษรเข้ม คมชัด อ่านง่าย */
+  --text-muted: #64748b;      /* สีเทารายละเอียด */
+  --border: #e2e8f0;          /* เส้นขอบการ์ด */
+  --success: #059669;         /* สีเขียว สต็อกปกติ */
+  --warning: #d97706;         /* สีส้ม สต็อกเริ่มน้อย */
+  --danger: #dc2626;          /* สีแดง สินค้าใกล้หมด/ต่ำกว่าเกณฑ์ */
+  --font-family: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 * {
@@ -17,15 +24,26 @@
 
 body {
   font-family: var(--font-family);
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  background-color: var(--bg-main);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
 }
 
-/* คอนเทนเนอร์หลักที่ยืดหยุ่นตามหน้าจอ PC, Tablet, Mobile */
 .container {
-  width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 1.25rem;
+}
+
+/* ปรับแต่ง Scrollbar ให้นุ่มนวล */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
