@@ -3,8 +3,8 @@ const cors = require('cors');
 require('dotenv').config();
 const db = require('./config/db');
 
-// 1. นำเข้า Routes
 const productRoutes = require('./routes/productRoutes');
+const transactionRoutes = require('./routes/transactionRoutes'); // <-- 1. นำเข้า route ใหม่
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -12,10 +12,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// 2. เรียกใช้งาน Route สินค้า
 app.use('/api/products', productRoutes);
+app.use('/api/transactions', transactionRoutes); // <-- 2. ใช้งาน route ใหม่
 
-// API เส้นทดสอบเดิม
 app.get('/api/test', async (req, res) => {
     try {
         const [rows] = await db.query('SELECT 1 + 1 AS result');
